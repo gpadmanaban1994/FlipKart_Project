@@ -50,6 +50,8 @@ public class BaseClass {
 	static private ExtentSparkReporter reporter;
 	static protected ExtentReports report;
 	static protected ExtentTest test; 
+	public static String startDateTime=null;
+	Properties prop;
 
 	//reading test data file and sheet before each test method. the file and sheet name will be given in each class in before class method.
 	@BeforeMethod                                     
@@ -77,6 +79,7 @@ public class BaseClass {
 	public void setUp() {
 		Date date=new Date();
 		String datetime=new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(date);
+		startDateTime=datetime;
 		reporter=new ExtentSparkReporter(System.getProperty("user.dir")+"//testreports//"+datetime+"//spark.html");
 		report=new ExtentReports();
 		report.attachReporter(reporter);
@@ -97,25 +100,26 @@ public class BaseClass {
 	public void setTest() throws IOException {
 		File file=new File(System.getProperty("user.dir")+"\\Flipkart.properties");
 		FileInputStream in=new FileInputStream(file);
-		Properties prop=new Properties();
+		prop=new Properties();
 		prop.load(in);
-		in.close();
-		System.out.println(app);		 
-		DesiredCapabilities dc=new DesiredCapabilities();
-		dc.setCapability("platformName", "Android");
-		dc.setCapability("deviceName", prop.getProperty("device"));
-		dc.setCapability("automationName", "uiautomator2");
-		dc.setCapability("platformVersion", prop.getProperty("androidVersion"));
-		dc.setCapability("app","storage:ed1edf08-c31c-4904-b584-62a76433a95d");
-		dc.setCapability("deviceOrientation", "portrait");
-		dc.setCapability("autoDismissAlerts", true);
-		dc.setCapability("fullReset", "true");		
-		driver=new AndroidDriver<>(new URL("https://mpgcristo:6aed154c-646b-4c98-970f-f57ccdb3c00c@ondemand.us-west-1.saucelabs.com:443/wd/hub"), dc);
+		in.close();		
+		DesiredCapabilities caps = DesiredCapabilities.android();
+		caps.setCapability("appiumVersion", "1.18.1");
+		caps.setCapability("deviceName","Google Pixel 3 GoogleAPI Emulator");
+		caps.setCapability("deviceOrientation", "portrait");
+		caps.setCapability("browserName", "");
+		caps.setCapability("platformVersion","10.0");
+		caps.setCapability("platformName","Android");
+		caps.setCapability("app",prop.getProperty("app"));		
+		driver=new AndroidDriver<>(new URL("https://mpgcristo:6aed154c-646b-4c98-970f-f57ccdb3c00c@ondemand.us-west-1.saucelabs.com:443/wd/hub"), caps);
 		driver.manage().timeouts().implicitlyWait(15000, TimeUnit.MILLISECONDS);
+		
 	}
 
 	@AfterTest
 	public void closeDriver() {
+
+		driver.removeApp(prop.getProperty("appPackage"));
 		driver.quit();
 	}
 

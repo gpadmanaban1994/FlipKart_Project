@@ -22,6 +22,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.utils.FileUtil;
 
+import base.BaseClass;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -41,7 +42,7 @@ public class BaseUtilities {
 		String time=new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(date);
 		TakesScreenshot ts=(TakesScreenshot)driver;
 		File file=ts.getScreenshotAs(OutputType.FILE);
-		File dest=new File(System.getProperty("user.dir")+"//screenshots//"+time+".png");
+		File dest=new File(System.getProperty("user.dir")+"//testreports//"+BaseClass.startDateTime+"//screenshots//"+time+".png");
 		FileUtils.copyFile(file, dest);
 		MediaEntityModelProvider media= MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build();
 		return media;
