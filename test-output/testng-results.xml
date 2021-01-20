@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-01-20T14:05:21 IST" name="Suite" finished-at="2021-01-20T14:08:54 IST" duration-ms="212872">
+    <groups>
+    </groups>
+    <test started-at="2021-01-20T14:05:21 IST" name="Test" finished-at="2021-01-20T14:08:54 IST" duration-ms="212872">
+      <class name="testSet_01.TestCase_01">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testSet_01.TestCase_01@59d016c9]" started-at="2021-01-20T14:05:21 IST" name="setUp" finished-at="2021-01-20T14:05:21 IST" duration-ms="165" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setTest()[pri:0, instance:testSet_01.TestCase_01@59d016c9]" started-at="2021-01-20T14:05:21 IST" name="setTest" finished-at="2021-01-20T14:06:44 IST" duration-ms="82920" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTest -->
+        <test-method is-config="true" signature="setTestData()[pri:0, instance:testSet_01.TestCase_01@59d016c9]" started-at="2021-01-20T14:06:44 IST" name="setTestData" finished-at="2021-01-20T14:06:44 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestData -->
+        <test-method is-config="true" signature="setTestdata()[pri:0, instance:testSet_01.TestCase_01@59d016c9]" started-at="2021-01-20T14:06:45 IST" name="setTestdata" finished-at="2021-01-20T14:06:45 IST" duration-ms="27" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setTestdata -->
+        <test-method signature="test(java.util.Map)[pri:0, instance:testSet_01.TestCase_01@59d016c9]" started-at="2021-01-20T14:06:45 IST" name="test" data-provider="readdata" finished-at="2021-01-20T14:08:53 IST" duration-ms="128701" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{RunFlag=Y, Email=mpgcristo@gmail.com, Product Name=Bose Sport Earbuds, TestCaseID=TC_01, Quantity=2, Password=QW5kcm9pZDEyMyQ=}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:testSet_01.TestCase_01@59d016c9]" started-at="2021-01-20T14:08:53 IST" name="closeDriver" finished-at="2021-01-20T14:08:54 IST" duration-ms="782" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testSet_01.TestCase_01@59d016c9]" started-at="2021-01-20T14:08:54 IST" name="tearDown" finished-at="2021-01-20T14:08:55 IST" duration-ms="324" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testSet_01.TestCase_01 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
